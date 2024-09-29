@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interview Simulator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #submitBtn {
+      padding: 10px 20px;
+      background-color: green;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      display: none;
+    }
+    #submitBtn:hover {
+      background-color: darkgreen;
+    }
+    .textarea {
+      flex:auto;
+      width: 100%;
+      margin: 5px 0 10px;
+    }
+    #interviewResult {
+      margin-top: 20px;
+    }
+    body {
+      flex:content;
+      flex-direction:column;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: linear-gradient(45deg, #ff0066, #ffcc00, #00ccff, #cc00ff);
+    background-size: 400% 400%;
+    animation: disco 10s ease infinite;
+    color: black;
+  }
+  
+  /* Animation for the disco background */
+  @keyframes disco {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 50% 100%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 0%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Style for buttons */
+  #submitBtn {
+    padding: 15px 20px;
+    background-color: #ff3399;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  #submitBtn:hover {
+    background-color: #ff0066;
+  }
+  #questionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Adds some space between the questions */
+  margin-top: 20px;
+}
+  
+  /* Styling the textareas */
+  .textarea {
+  width: 100%;
+  margin: 5px 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid #fff;
+  padding: 10px;
+}
+  
+  /* Styling the result section */
+  #interviewResult p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  </style>
+</head>
+<body>
+<h1>Interactive Interview Simulator</h1>
+
+<!-- Dropdown for Job Role Selection -->
+<label for="jobSelect">Select a Job Role:</label>
+<select id="jobSelect">
+  <option value="">-- Select a Job --</option>
+  <option value="software_engineer">Software Engineer</option>
+  <option value="data_scientist">Data Scientist</option>
+  <option value="devops_engineer">DevOps Engineer</option>
+  <option value="project_manager">Project Manager</option>
+  <option value="qa_engineer">QA Engineer</option>
+</select>
+
+<!-- Container for Questions -->
+<div id="questionContainer"></div>
+
+<!-- Submit Button -->
+<button id="submitBtn">Submit Answers</button>
+
+<!-- Result Section -->
+<div id="interviewResult"></div>
+
+<script src="app.js"></script> <!-- Reference to app.js in the same directory -->
+</body>
+</html>
