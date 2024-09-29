@@ -1,4 +1,51 @@
-.ballOne{
-    height:100px;
-    color:pink;
-}
+/* Disco-themed background */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: linear-gradient(45deg, #ff0066, #ffcc00, #00ccff, #cc00ff);
+    background-size: 400% 400%;
+    animation: disco 10s ease infinite;
+    color: white;
+  }
+  
+  /* Animation for the disco background */
+  @keyframes disco {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 50% 100%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 0%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Style for buttons */
+  #submitBtn {
+    padding: 10px 20px;
+    background-color: #ff3399;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  #submitBtn:hover {
+    background-color: #ff0066;
+  }
+  
+  /* Styling the textareas */
+  .textarea {
+    width: 100%;
+    margin: 5px 0 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid #fff;
+    padding: 10px;
+  }
+  
+  /* Styling the result section */
+  #interviewResult p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
