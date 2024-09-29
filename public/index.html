@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rhythm Recruiter</title>
+    <title>Interview Simulator with Disco Ball</title>
     <style>
         html {
             width: 100%;
@@ -11,6 +11,8 @@
         }
 
         body {
+           flex:content;
+           flex-direction:column;
             background-color: #800080;
             background: -webkit-linear-gradient(bottom left, #0b0a0a, #e3dddd);
             background: -moz-linear-gradient(bottom left, #eae5e5, #222);
@@ -76,7 +78,7 @@
 
         .square {
             -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d; 
+            transform-style: preserve-3d;	
             position: absolute;
             top: 50px;
             left: 50px;
@@ -84,10 +86,18 @@
             height: 6px;
             transform: rotateX(90deg) rotateY(0deg) translateZ(0px);
         }
+        #questionContainer{
+          display:flex;
+          flex-direction:column;
+          gap:10px;
+          margin-top:20px;
+        }
 
         .textarea {
+            flex:auto;
             width: 100%;
             margin: 5px 0 10px;
+            
         }
 
         #submitBtn {
@@ -101,7 +111,7 @@
         }
 
         #submitBtn:hover {
-            background-color: rgb(223, 222, 228);
+            background-color: rgb(57, 50, 89);
         }
 
         #interviewResult {
@@ -115,7 +125,7 @@
         <div id="discoBallMiddle"></div>
     </div>
 
-    <h1>Rhythm Recruiter</h1>
+    <h1>Interactive Interview Simulator</h1>
 
     <!-- Dropdown for Job Role Selection -->
     <label for="jobSelect">Select a Job Role:</label>
