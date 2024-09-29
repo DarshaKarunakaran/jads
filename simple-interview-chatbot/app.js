@@ -1,9 +1,15 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const port = 3000;
 
-app.use(express.json());
-app.use(express.static('public')); // Serve static files like HTML, CSS, JS
+// Serve static files from the "public" directory
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Define a simple route to check the server
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // Predefined questions for different roles
 const interviewQuestions = {
@@ -35,7 +41,7 @@ app.get('/get-questions/:role', (req, res) => {
   }
 });
 
-// Start server
+// Start the server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });

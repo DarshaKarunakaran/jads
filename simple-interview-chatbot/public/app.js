@@ -34,7 +34,7 @@ document.getElementById('startBtn').addEventListener('click', async () => {
 
   auth0.createAuth0Client({
     domain: "dev-etk34512zn1q2blm.us.auth0.com",
-    clientId: "IvgB7YFyBqB1nEO7Y2DJISr6qSGyiUn2",
+    clientId: "RXpF41CVVRZ5sEtD83R1bDSe0vvHRH8a",
     authorizationParams: {
       redirect_uri: window.location.origin
     }
@@ -47,9 +47,7 @@ document.getElementById('startBtn').addEventListener('click', async () => {
       auth0Client.loginWithRedirect();
     });
   
-    if (location.search.includes("state=") && 
-        (location.search.includes("code=") || 
-        location.search.includes("error="))) {
+    if (location.search.includes("state=") && (location.search.includes("code=") || location.search.includes("error="))) {
       await auth0Client.handleRedirectCallback();
       window.history.replaceState({}, document.title, "/");
     }
@@ -69,18 +67,19 @@ document.getElementById('startBtn').addEventListener('click', async () => {
   
     // Assumes an element with id "profile" in the DOM
     const profileElement = document.getElementById("profile");
+    const loginBtn = document.getElementById("login");
+    const logoutBtn = document.getElementById("logout");
   
     if (isAuthenticated) {
       profileElement.style.display = "block";
-      profileElement.innerHTML = `
-        <p>${userProfile.name}</p>
-        <img src="${userProfile.picture}" alt="User Profile Picture" />
-      `;
-      loginButton.style.display = "none"; // Hide login button when authenticated
-      logoutButton.style.display = "block"; // Show logout button
+      document.getElementById("username").textContent = userProfile.name;
+      document.getElementById("userpicture").src = userProfile.picture;
+      
+      loginBtn.style.display = "none";  // Hide login button
+      logoutBtn.style.display = "block";  // Show logout button
     } else {
-      profileElement.style.display = "none";
-      loginButton.style.display = "block"; // Show login button
-      logoutButton.style.display = "none"; // Hide logout button
+      profileElement.style.display = "none";  // Hide profile if not authenticated
+      loginBtn.style.display = "block";  // Show login button
+      logoutBtn.style.display = "none";  // Hide logout button
     }
   });
